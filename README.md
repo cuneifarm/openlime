@@ -1,4 +1,4 @@
-# Openlime
+# Openlime (Open Layered IMage Explorer)
 Web-based, advanced images viewer (RTI, multispectral, BRDF, etc. )
 
 ## Installing npm
@@ -19,10 +19,11 @@ sudo npm install -g npm@latest-6
 To obtain npm for Windows, you need to download the Windows version
 of node.js from https://nodejs.org/en/download/ .
 You can download either the Windows Installer (.msi) or
-the Windows Binary (.zip).  If you download the Windows
+the Windows Binary (.zip).  If you download 
+and expand the Windows
 Binary zip file, you will afterwards
 need to set your `PATH` variable
-to include the directory containing the npm executable
+to include the directory that contains the npm executable
 (this directory is the subdirectory `node_modules\npm\bin`).
 
 ## Setting up npm (all platforms)
@@ -51,8 +52,8 @@ directory that was cloned from this repository.
 
 ### Build the code
 
-The following command reads the code in `./src`, and
-puts the transpiled webpack results in `./dist/main.js`.
+The following command reads the javascript code in `./src`, and
+puts the transpiled webpack code in `./dist/main.js`.
 ```bash
 npm run build
 ```
@@ -64,17 +65,17 @@ The webpack code is used, for example, by the
 
 If you wish, you can run the node.js development server
 to serve your web pages.
-This server will treat `./dist` as the home directory.
+This server will use `./dist` as the home directory.
 The server is run in "hot" mode, which means that 
 whenever you change a file in the `./src` directory, 
 the webpack code will automatically be rebuilt, and
 your web browser will automatically refresh, to reflect
-the latest changes.
+your latest changes.
 ```bash
 npm run start
 ```
 
-Then access the demo app at: http://localhost:8080 (which
+Then access the demo app at http://localhost:8080 (which
 by default is `./dist/index.html`).
 
 If you prefer to serve from a different port, say 8088, you can call
@@ -146,7 +147,7 @@ Documentation.js supports markdown syntax and JSDoc syntax.
 JSON example of the configuration:
 
 
-```json
+```
 {
 	camera: { 
 	},
