@@ -19,11 +19,11 @@ sudo npm install -g npm@latest-6
 To obtain npm for Windows, you need to download the Windows version
 of node.js from https://nodejs.org/en/download/ .
 You can download either the Windows Installer (.msi) or
-Windows Binary (.zip).  If you download the Windows
+the Windows Binary (.zip).  If you download the Windows
 Binary zip file, you will afterwards
 need to set your `PATH` variable
 to include the directory containing the npm executable
-(this directory is in the subdirectory `node_modules\npm\bin`).
+(this directory is the subdirectory `node_modules\npm\bin`).
 
 ## Setting up npm (all platforms)
 
@@ -75,7 +75,7 @@ npm run start
 ```
 
 Then access the demo app at: http://localhost:8080 (which
-is by default `./dist/index.html`).
+by default is `./dist/index.html`).
 
 If you prefer to serve from a different port, say 8088, you can call
 ```bash
@@ -91,7 +91,7 @@ or
 `./build/openlime.js`,
 in your web page.  
 The files
-`./dist/ui_custom.html` and `.dist/ui_svg.html` are examples of
+`./dist/ui_custom.html` and `./dist/ui_svg.html` are examples of
 this approach.  
 Such files will display correctly when served from any web server.
 To create the rollup files, call `rollup`:
@@ -107,8 +107,8 @@ will automatically update the rollup files
 `./build/openlime.min.js`
 and 
 `./build/openlime.js` 
-whenever anything changes in the `.src` directory.
-Note that, unlike with the node.js server, your web page will
+whenever anything changes in the `./src` directory.
+Note that, unlike with the node.js server, the browser will
 not refresh automatically; you will have to do that yourself
 once the rollup files have been updated.
 
@@ -146,7 +146,7 @@ Documentation.js supports markdown syntax and JSDoc syntax.
 JSON example of the configuration:
 
 
-```
+```json
 {
 	camera: { 
 	},
