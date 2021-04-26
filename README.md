@@ -16,22 +16,25 @@ sudo npm install -g npm@latest-6
 ```
 
 ### Windows
-To obtain npm, you need to download the Windows version
+To obtain npm for Windows, you need to download the Windows version
 of node.js from https://nodejs.org/en/download/ .
 You can download either the Windows Installer (.msi) or
-Windows Binary (.zip) version.  If you download the Windows
-Binary version, you will need to set your PATH variable
-to include the directory containing the npm executable, which
-is in the subdirectory `node_modules\npm\bin`.
+Windows Binary (.zip).  If you download the Windows
+Binary zip file, you will afterwards
+need to set your `PATH` variable
+to include the directory containing the npm executable
+(this directory is in the subdirectory `node_modules\npm\bin`).
 
 ## Setting up npm (all platforms)
 
-The following steps should be performed in the `openlime`
+The following step should be performed in the `openlime`
 directory that was cloned from this repository.
 
-Install the package.  This command tells npm to download
+Before using npm, you need to install the required 
+packages locally.  This only needs to be done once.
+The following command tells npm to download
 all the webpack packages (and their dependencies) listed in the
-`package.json` file.  This will be put in the `./node_modules`
+`package.json` file.  These will be put in the `./node_modules`
 directory.
 
 ```bash
@@ -43,32 +46,38 @@ and `nodemon`, which will be used below.
  
 ## Using npm (all platforms)
 
+These steps should be performed in the `openlime`
+directory that was cloned from this repository.
+
 ### Build the code
-Transpile the code in `./src`, and
-put the results in `./dist/main.js`.
+
+The following command reads the code in `./src`, and
+puts the transpiled webpack results in `./dist/main.js`.
 ```bash
 npm run build
 ```
 
-This transpiled code is used, for example, by the
+The webpack code is used, for example, by the
 `./dist/index.html` web page.
 
 ### Run the node.js server
 
-If you wish, you can run the node.js development server.
+If you wish, you can run the node.js development server
+to serve your web pages.
 This server will treat `./dist` as the home directory.
 The server is run in "hot" mode, which means that 
 whenever you change a file in the `./src` directory, 
-the webpack code will automatically be recreated, and
+the webpack code will automatically be rebuilt, and
 your web browser will automatically refresh, to reflect
 the latest changes.
 ```bash
 npm run start
 ```
 
-Then access the demo app at: http://localhost:8080
+Then access the demo app at: http://localhost:8080 (which
+is by default `./dist/index.html`).
 
-If you prefer to run with a different port, say `8088`, you can use
+If you prefer to serve from a different port, say 8088, you can call
 ```bash
 npm run start -- --port 8088
 ```
@@ -98,8 +107,8 @@ will automatically update the rollup files
 `./build/openlime.min.js`
 and 
 `./build/openlime.js` 
-whenever you change anything in the `.src` directory.
-Note that unlike with the node.js server, your web page will
+whenever anything changes in the `.src` directory.
+Note that, unlike with the node.js server, your web page will
 not refresh automatically; you will have to do that yourself
 once the rollup files have been updated.
 
@@ -109,9 +118,9 @@ npm run nodemon
 
 ### Create documentation
 
-Documentation can be created from structured comments in the
+The documentation is created from structured comments in the
 source code (in `./src`).
-This documentation, once created, is accessed from `./docs/index.html`
+Once created, it is accessible from `./docs/index.html`
 
 ```bash
 npm run documentation
@@ -149,7 +158,7 @@ JSON example of the configuration:
 				width: //optional
 				height: //optional
 				url: 
-				layout: <image|google|deepzoom|zoomify|iip|iiif> //optional if can be recovered from the url.
+				layout: <image|google|deepzoom|zoomify|iip|iiif> //optional if can be determined from the url.
 				
 
 			}
